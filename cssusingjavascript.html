@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="cssClassStyles.css" rel="stylesheet" type="text/css">
+<style>
+</style>
+
+<h1>Grocery List</h1>
+<h2>Here is a list of your most common grocery items. Add and remove them from your grocery list. Your highest priority is the first on the list.</h2>
+</head>
+<body onload="changecolor()">
+   <p>Groccery List</p>
+   <div id="list" class="list"></div><br>
+
+   <button id="ab" onclick="addb()" >Add Bread</button>
+   <button id="am" onclick="addm()" >Add Milk</button>
+   <button id="ac" onclick="addc()" >Add Cheese</button>
+   <button id="rb" onclick="remove()">Remove Item</button><br><br>
+   <label for="priority">Choose one of your Items to be your highest priority:</label>
+
+
+<script>
+
+function addb()
+{
+  var bread = document.createElement("LI");
+  var addBread = document.createTextNode("Bread");
+  bread.appendChild(addBread);
+  document.getElementById("list").appendChild(bread);
+}
+
+function remove()
+{
+   var cut = document.getElementById("list");
+   cut.removeChild(cut.childNodes[1]);
+}
+
+function removePriority()
+{
+   var cut = document.getElementById("list");
+   cut.removeChild(cut.childNodes[0]);
+}
+
+function addc()
+{
+  var cheese = document.createElement("LI");
+  var addCheese = document.createTextNode("Cheese");
+  cheese.appendChild(addCheese);
+  document.getElementById("list").appendChild(cheese);
+}
+
+function addm()
+{
+  var milk = document.createElement("LI");
+  var addMilk = document.createTextNode("Milk");
+  milk.appendChild(addMilk);
+  document.getElementById("list").appendChild(milk);
+}
+
+function addToTop()
+{
+  var newTop = document.createElement("LI");
+  var addTopItem = document.createTextNode(priority.value);
+  newTop.appendChild(addTopItem);
+  var addToList = document.getElementById("list");
+   addToList.insertBefore(newTop, addToList.childNodes[0]);
+   myPriority = new TopPriority("eggs");
+document.getElementById("class").innerHTML = myPriority.present(priority.value);
+}
+
+function changeClass()
+{
+  document.getElementById("list").classList.add("change");
+}
+function fixClass()
+{
+  document.getElementById("list").classList.remove("change");
+}
+
+</script>
+
+   <select id="priority" onchange="addToTop()">
+      <option value="Milk">Milk</option>
+      <option value="Cheese">Cheese</option>
+      <option value="Bread">Bread</option>
+   </select><br>
+   <button id="rb" onclick="removePriority()">Remove Priority Item</button><br>
+   <button id="cc" onclick="changeClass()">Change how the grocery list looks</button>
+   <p>That was fun now let's change it back</p><button id="fc" onclick="fixClass()">Change back</button>
+
+
+</html>
