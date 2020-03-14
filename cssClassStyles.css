@@ -1,0 +1,30 @@
+.list
+  {
+    text-indent: 3px;
+    background-color: lightgrey;
+    text-align: left;
+    width: 95px;
+    transition: transform 1s;
+
+  }
+  .list:hover
+  {
+    width: 150px;
+    height: 100px;
+    transition-property: width, height;
+    transition-timing-function: ease-in-out;
+    transform: skew(-20deg);
+    transform:skewX(25deg);
+    transform:skewY(10deg);
+    transform:skew(25deg, 10deg);
+  }
+
+  .change
+  {
+    background-color: darkgrey;
+    border: 2px dotted;
+    width: 200px;
+    height: 200px;
+    text-decoration: underline overline;
+  }
+
