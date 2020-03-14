@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>Your First Javascript video from Mosh Hamedani hosted on Youtube</h1>
+
+</head>
+<body>
+
+<p>Here is the video</p>
+<video width="300" height="240" controls src="https://www.youtube.com/watch?v=W6NZfCO5SIk">Your browser does not support the audio element.</video>
+
+<p>Here is the audio from "zapsplat" a free sound effects website</p>
+<audio controls>
+  <source src="https://www.zapsplat.com/sound-effect-category/typewriter/">
+Your browser does not support the audio element.
+</audio>
+
+<p>Here is the canvas practice</p>
+<canvas id="firstCanvas" width="150" height="150" style="border: 2px dotted green;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<script type="text/javascript">
+  var getCanvas = document.getElementById("firstCanvas");
+  var getFill = getCanvas.getContext("2d");
+  var gradient = getFill.createRadialGradient(30,30,10,70,70,70);
+  gradient.addColorStop(0,"purple");
+  gradient.addColorStop(1,"black");
+  getFill.fillStyle = gradient;
+  getFill.fillRect(0,0,150,150);
+
+</script>
+
+</body>
+
+
+</html>
